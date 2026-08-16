@@ -282,26 +282,34 @@
 </div>
 
 <script>
-const questions = [
-  "1. Open a tight or new jar.",
-  "2. Do heavy household chores (e.g., wash walls, floors).",
-  "3. Carry a shopping bag or briefcase.",
-  "4. Wash your back.",
-  "5. Use a knife to cut food.",
-  "6. Recreational activities requiring force/impact through the arm (e.g., golf, hammering, tennis).",
-  "7. Extent your arm/shoulder/hand problem interfered with social activities.",
-  "8. Limitation in work or daily activities due to arm/shoulder/hand problem.",
-  "9. Arm, shoulder or hand pain.",
-  "10. Tingling (pins and needles) in your arm, shoulder or hand.",
-  "11. Difficulty sleeping due to arm/shoulder/hand pain."
+const difficultyLabels = [
+  "No difficulty",
+  "Mild difficulty",
+  "Moderate difficulty",
+  "Severe difficulty",
+  "Unable"
 ];
 
-const labels = [
-  "1 – No difficulty / None",
-  "2 – Mild difficulty / Mild",
-  "3 – Moderate difficulty / Moderate",
-  "4 – Severe difficulty / Severe",
-  "5 – Unable / Extreme"
+const severityLabels = [
+  "None",
+  "Mild",
+  "Moderate",
+  "Severe",
+  "Extreme"
+];
+
+const questions = [
+  { title: "1. Open a tight or new jar.", options: difficultyLabels },
+  { title: "2. Do heavy household chores (e.g., wash walls, floors).", options: difficultyLabels },
+  { title: "3. Carry a shopping bag or briefcase.", options: difficultyLabels },
+  { title: "4. Wash your back.", options: difficultyLabels },
+  { title: "5. Use a knife to cut food.", options: difficultyLabels },
+  { title: "6. Recreational activities requiring force/impact through the arm (e.g., golf, hammering, tennis).", options: difficultyLabels },
+  { title: "7. Extent your arm/shoulder/hand problem interfered with social activities.", options: difficultyLabels },
+  { title: "8. Limitation in work or daily activities due to arm/shoulder/hand problem.", options: severityLabels },
+  { title: "9. Arm, shoulder or hand pain.", options: severityLabels },
+  { title: "10. Tingling (pins and needles) in your arm, shoulder or hand.", options: severityLabels },
+  { title: "11. Difficulty sleeping due to arm/shoulder/hand pain.", options: difficultyLabels }
 ];
 
 const questionsDiv = document.getElementById("questions");
@@ -317,7 +325,7 @@ questions.forEach((q, index) => {
 
   const title = document.createElement("div");
   title.className = "question-title";
-  title.textContent = q;
+  title.textContent = q.title;
   header.appendChild(title);
 
   card.appendChild(header);
@@ -325,14 +333,15 @@ questions.forEach((q, index) => {
   const optionsGroup = document.createElement("div");
   optionsGroup.className = "options-group";
 
-  for (let i = 1; i <= 5; i++) {
+  q.options.forEach((optText, i) => {
+    const value = i + 1;
     const label = document.createElement("label");
     label.className = "option-item";
 
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = `q${qNum}`;
-    radio.value = i;
+    radio.value = value;
     radio.className = "hidden-radio";
 
     radio.addEventListener("change", () => {
@@ -346,13 +355,13 @@ questions.forEach((q, index) => {
 
     const text = document.createElement("span");
     text.className = "option-text";
-    text.textContent = labels[i - 1];
+    text.textContent = optText;
 
     label.appendChild(radio);
     label.appendChild(dot);
     label.appendChild(text);
     optionsGroup.appendChild(label);
-  }
+  });
 
   card.appendChild(optionsGroup);
   questionsDiv.appendChild(card);
