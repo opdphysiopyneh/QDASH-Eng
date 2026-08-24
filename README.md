@@ -449,11 +449,11 @@ const CONFIG = {
     { title: "Wash your back.", options: difficultyLabels },
     { title: "Use a knife to cut food.", options: difficultyLabels },
     { title: "Recreational activities requiring force/impact through the arm (e.g., golf, hammering, tennis).", options: difficultyLabels },
-    { title: "Extent your arm/shoulder/hand problem interfered with your normal social activities.", options: q7SocialImpactLabels },
-    { title: "Limitation in work or daily activities due to arm/shoulder/hand problem.", options: q8ActivityLimitationLabels },
+    { title: "Extent your arm/shoulder/hand problem interfered with normal social activities.", options: q7SocialImpactLabels },
+    { title: "Limitation in work or other regular daily activities due to arm/shoulder/hand problem.", options: q8ActivityLimitationLabels },
     { title: "Arm, shoulder or hand pain.", options: severityLabels },
     { title: "Tingling (pins and needles) in your arm, shoulder or hand.", options: severityLabels },
-    { title: "During the past week, how much difficulty you had sleeping due to arm/shoulder/hand pain.", options: q11SleepImpactLabels }
+    { title: "During the past week, how much difficulty you had sleeping because of your arm/shoulder/hand pain.", options: q11SleepImpactLabels }
   ]
 };
 
