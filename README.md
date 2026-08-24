@@ -405,12 +405,36 @@ const difficultyLabels = [
   { key: "5", value: 5, label: "Unable" }
 ];
 
+const q7SocialImpactLabels = [
+  { key: "1", value: 1, label: "Not at all" },
+  { key: "2", value: 2, label: "Slightly" },
+  { key: "3", value: 3, label: "Moderately" },
+  { key: "4", value: 4, label: "Quite a bit" },
+  { key: "5", value: 5, label: "Extremely" }
+];
+
+const q8ActivityLimitationLabels = [
+  { key: "1", value: 1, label: "Not limited at all" },
+  { key: "2", value: 2, label: "Slightly limited" },
+  { key: "3", value: 3, label: "Moderately limited" },
+  { key: "4", value: 4, label: "Very limited" },
+  { key: "5", value: 5, label: "Unable" }
+];
+
 const severityLabels = [
   { key: "1", value: 1, label: "None" },
   { key: "2", value: 2, label: "Mild" },
   { key: "3", value: 3, label: "Moderate" },
   { key: "4", value: 4, label: "Severe" },
   { key: "5", value: 5, label: "Extreme" }
+];
+
+const q11SleepImpactLabels = [
+  { key: "1", value: 1, label: "No difficulty" },
+  { key: "2", value: 2, label: "Mild difficulty" },
+  { key: "3", value: 3, label: "Moderate difficulty" },
+  { key: "4", value: 4, label: "Severe difficulty" },
+  { key: "5", value: 5, label: "So much difficulty that I can't sleep" }
 ];
 
 const CONFIG = {
@@ -425,11 +449,11 @@ const CONFIG = {
     { title: "Wash your back.", options: difficultyLabels },
     { title: "Use a knife to cut food.", options: difficultyLabels },
     { title: "Recreational activities requiring force/impact through the arm (e.g., golf, hammering, tennis).", options: difficultyLabels },
-    { title: "Extent your arm/shoulder/hand problem interfered with social activities.", options: difficultyLabels },
-    { title: "Limitation in work or daily activities due to arm/shoulder/hand problem.", options: severityLabels },
+    { title: "Extent your arm/shoulder/hand problem interfered with your normal social activities.", options: q7SocialImpactLabels },
+    { title: "Limitation in work or daily activities due to arm/shoulder/hand problem.", options: q8ActivityLimitationLabels },
     { title: "Arm, shoulder or hand pain.", options: severityLabels },
     { title: "Tingling (pins and needles) in your arm, shoulder or hand.", options: severityLabels },
-    { title: "Difficulty sleeping due to arm/shoulder/hand pain.", options: difficultyLabels }
+    { title: "During the past week, how much difficulty you had sleeping due to arm/shoulder/hand pain.", options: q11SleepImpactLabels }
   ]
 };
 
