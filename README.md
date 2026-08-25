@@ -440,7 +440,6 @@ const q11SleepImpactLabels = [
 const CONFIG = {
   title: "QuickDASH Outcome Measure",
   instruction: "Please select the single option that best describes your condition <strong>in the past week</strong>.",
-  scoreNote: "The lower the QuickDASH score, the better.<br>(0 represents no disability, 100 represents most severe disability)",
   enableNprs: true,
   items: [
     { title: "Open a tight or new jar.", options: difficultyLabels },
