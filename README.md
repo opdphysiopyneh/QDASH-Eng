@@ -571,7 +571,7 @@ function submitAssessment() {
     document.getElementById("modalNprsText").textContent = `${nprsVal} / 10`;
   }
 
-  document.getElementById("modalScoreValue").textContent = `${roundedScore}`;
+  document.getElementById("modalScoreValue").textContent = `${roundedScore}%`;
   document.getElementById("modalScoreSubtitle").innerHTML = `Raw total score: <strong>${total}</strong> / 55 (Unrounded: ${rawScore.toFixed(1)})`;
 
   const modal = document.getElementById("scoreModal");
